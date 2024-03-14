@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1584205422 source:e:\cpp\repos\lab2\main.c
+	<windows.h>
+	<gl/gl.h>
+
+1710411885 source:e:\cpp\repos\lab2\main.cpp
+	<windows.h>
+	<gl/gl.h>
+	<iostream>
+	"button.h"
+	<vector>
+
+1710410645 source:e:\cpp\repos\lab2\button.cpp
+	"button.h"
+	<gl/gl.h>
+	<string>
+	<iostream>
+
+1710414687 e:\cpp\repos\lab2\button.h
+	<string>
+	<windows.h>
+
+1709479656 e:\cpp\repos\lab2\button.cpp
+	"button.h"
+	<gl/gl.h>
+
