@@ -1,17 +1,19 @@
 #include <windows.h>
 #include <gl/gl.h>
 #include <iostream>
-#include "button.h"
+#include "menu.h"
+#include "element.h"
 #include <vector>
+#include <algorithm>
 
 LRESULT CALLBACK WindowProc(HWND, UINT, WPARAM, LPARAM);
 void EnableOpenGL(HWND hwnd, HDC*, HGLRC*);
 void DisableOpenGL(HWND, HDC, HGLRC);
 void ResizeElemenst(UINT newWidth, UINT newHeight);
-std::vector<Button> buttons;
 const int width = 800;
-const int height = 500;
-Button::ButtonLayoutFactory buttonF{width,height};
+const int height = 600;
+Menu mainMenu{width,height};
+Menu extraMenu{width,height};
 
 int WINAPI WinMain(HINSTANCE hInstance,
                    HINSTANCE hPrevInstance,
@@ -42,32 +44,32 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
     if (!RegisterClassEx(&wcex))
         return 0;
-
     /* create main window */
     hwnd = CreateWindowEx(0,
                           "GLSample",
                           "OpenGL Sample",
-                          WS_OVERLAPPEDWINDOW,
-                          CW_USEDEFAULT,
-                          CW_USEDEFAULT,
-                          width,
-                          height,
-                          NULL,
-                          NULL,
-                          hInstance,
-                          NULL);
+                        WS_VISIBLE| WS_SYSMENU | WS_MINIMIZEBOX,
+                        CW_USEDEFAULT,
+                        CW_USEDEFAULT,
+        width, height, NULL, NULL, hInstance, NULL);
 
 
 
     ShowWindow(hwnd, nCmdShow);
     EnableOpenGL(hwnd, &hDC, &hRC);
+    const float btnWidth = 200;
+    const float btnHeight = 100;
+    mainMenu.addStartX((width - btnWidth)/2);
+    mainMenu.createText("Program",btnWidth,btnHeight,nullptr, ElementType::Nonactive);
+    mainMenu.createButton(btnWidth,btnHeight,"Start",[](){std::swap(mainMenu,extraMenu);});
+    mainMenu.createButton(btnWidth,btnHeight,"Test",[](){std::cout<<"test"<<std::endl;});
+    mainMenu.createButton(btnWidth,btnHeight,"Exit",[](){PostQuitMessage(0);});
+    extraMenu.addStartX((width - btnWidth)/2 - 200);
+    extraMenu.createImage(std::string("spritelist.png"),640,240,1,nullptr,ElementType::Nonactive);
+    extraMenu.addStartX(200);
+    extraMenu.createButton(btnWidth,btnHeight,"Back",[](){std::swap(mainMenu,extraMenu);});
     RECT rct;
     GetClientRect(hwnd, &rct);
-    int width = rct.right - rct.left;
-    int height = rct.bottom - rct.top;
-    buttonF.update(width,height);
-    buttons.push_back(buttonF.createButton(100,100,"text",[](){std::cout<<"action"<<std::endl;}));
-    buttons.push_back(buttonF.createButton(100,100,"text",[](){std::cout<<"action1"<<std::endl;}));
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glViewport(0, 0, rct.right, rct.bottom);
@@ -95,10 +97,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
             /* OpenGL animation code goes here */
             glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
             glClear(GL_COLOR_BUFFER_BIT);
-            for(Button button : buttons)
-            {
-                button.render();
-            }
+            mainMenu.renderAll();
             SwapBuffers(hDC);
         }
     }
@@ -117,17 +116,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     {
         case WM_LBUTTONUP:
             {
-                POINT cursorXY;
-                if(GetCursorPos(&cursorXY) && ScreenToClient(hwnd,&cursorXY))
-                {
-                    for(Button btn : buttons)
-                    {
-                        if(cursorXY.x >= btn.getX() && cursorXY.x<= btn.getX() + btn.getWidth() && cursorXY.y >= btn.getY() && cursorXY.y <= btn.getY() + btn.getHeight())
-                        {
-                            btn();
-                        }
-                    }
-                }
+                mainMenu.handleClick(hwnd);
             }
             return 0;
         case WM_CLOSE:
@@ -149,7 +138,6 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
             {
                 UINT width = LOWORD(lParam);
                 UINT height = HIWORD(lParam);
-                buttonF.update(width, height);
                 glMatrixMode(GL_PROJECTION);
                 glLoadIdentity();
                 glViewport(0, 0, width, height);

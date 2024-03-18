@@ -1,9 +1,9 @@
-#include "button.h"
+#include "menu.h"
+#include "element.h"
 #include <gl/gl.h>
 #include <string>
-#include <iostream>
 
-Button::Button(float x,float y,float height,float width,std::string text,void (*action)()): x{x},y{y},height{height},width{width}, text{text},action{action}
+Menu::Button::Button(float x,float y,float width,float height,std::string text,void (*action)()): Element{x,y,width,height,action,ElementType::Active}, text{text}
 {
     vert[0]=vert[6]=x;
     vert[2]=vert[4]=x+width;
@@ -12,7 +12,7 @@ Button::Button(float x,float y,float height,float width,std::string text,void (*
 }
 
 
-void Button::render()
+void Menu::Button::render()
 {
     glPushMatrix();
     glVertexPointer(2, GL_FLOAT, 0, vert);
@@ -23,34 +23,20 @@ void Button::render()
     glLineWidth(1);
     glDrawArrays(GL_LINE_LOOP,0,4);
     glDisableClientState(GL_VERTEX_ARRAY);
+
+    this->t.render();
     glPopMatrix();
 }
 
-Button Button::ButtonLayoutFactory::createButton(float height,float width,std::string text,void (*action)())
+void Menu::Button::update()
 {
-    Button btn = Button(currentX,currentY,height,width,text,action);
-    if((freeWidth >= width + pading))
-    {
-        freeWidth -= width + pading;
-        currentX += width + pading;
-    }
-    else if(freeHeight >= height + pading)
-    {
-        freeHeight -= height + pading;
-        currentY += height + pading;
-        freeWidth = screenW;
-        currentX = startX;
-        btn = Button(currentX,currentY,height,width,text,action);
-    }
-    return btn;
-}
-
-void Button::ButtonLayoutFactory::update(float screenW, float screenH)
-{
-    this->freeWidth = screenW;
-    this->freeHeight = screenH;
-    this->screenW = screenW;
-    this->screenH = screenH;
+    vert[0]=vert[6]=getX();
+    vert[2]=vert[4]=getX()+getWidth();
+    vert[1]=vert[3]=getY();
+    vert[5]=vert[7]=getY()+getHeight();
+    t.setX(getX());
+    t.setY(getY());
+    t.update();
 }
 
 

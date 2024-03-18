@@ -37,11 +37,15 @@
 			<Add library="gdi32" />
 		</Linker>
 		<Unit filename="button.cpp" />
-		<Unit filename="button.h" />
+		<Unit filename="element.h" />
+		<Unit filename="image.cpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="menu.cpp" />
+		<Unit filename="menu.h" />
+		<Unit filename="spritelist.png" />
 		<Unit filename="stb-master/stb_easy_font.h" />
 		<Unit filename="stb-master/stb_image.h" />
-		<Unit filename="text.h" />
+		<Unit filename="text.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

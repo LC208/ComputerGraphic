@@ -3,24 +3,114 @@
 	<windows.h>
 	<gl/gl.h>
 
-1710411885 source:e:\cpp\repos\lab2\main.cpp
+1710761296 source:e:\cpp\repos\lab2\main.cpp
+	<windows.h>
+	<gl/gl.h>
+	<iostream>
+	"menu.h"
+	"element.h"
+	<vector>
+	<algorithm>
+
+1710759774 source:e:\cpp\repos\lab2\button.cpp
+	"menu.h"
+	"element.h"
+	<gl/gl.h>
+	<string>
+
+1710654893 e:\cpp\repos\lab2\button.h
+	<string>
+	<windows.h>
+	"menu.h"
+	"text.h"
+
+1709479656 e:\cpp\repos\lab2\button.cpp
+	"button.h"
+	<gl/gl.h>
+
+1710485844 source:d:\lab2\main.cpp
 	<windows.h>
 	<gl/gl.h>
 	<iostream>
 	"button.h"
 	<vector>
 
-1710410645 source:e:\cpp\repos\lab2\button.cpp
+1710485924 d:\lab2\button.h
+	<string>
+	<windows.h>
+	"text.h"
+
+1710485902 d:\lab2\text.h
+	<string>
+
+1710484840 source:d:\lab2\button.cpp
 	"button.h"
 	<gl/gl.h>
 	<string>
 	<iostream>
 
-1710414687 e:\cpp\repos\lab2\button.h
+1710485908 source:d:\lab2\text.cpp
+	"text.h"
 	<string>
-	<windows.h>
+	"stb-master/stb_easy_font.h"
+	<GL/gl.h>
+	<iostream>
 
-1709479656 e:\cpp\repos\lab2\button.cpp
-	"button.h"
-	<gl/gl.h>
+1710485608 d:\lab2\stb-master\stb_easy_font.h
+	<stdlib.h>
+	<math.h>
+
+1710654892 e:\cpp\repos\lab2\text.h
+	<string>
+	"menu.h"
+
+1710759574 source:e:\cpp\repos\lab2\text.cpp
+	"menu.h"
+	"element.h"
+	<string>
+	"stb-master/stb_easy_font.h"
+	<GL/gl.h>
+
+1674029754 e:\cpp\repos\lab2\stb-master\stb_easy_font.h
+	<stdlib.h>
+	<math.h>
+
+1710760884 e:\cpp\repos\lab2\menu.h
+	<string>
+	<vector>
+	"windef.h"
+	"stb-master/stb_easy_font.h"
+	<algorithm>
+	"element.h"
+
+1710760766 source:e:\cpp\repos\lab2\menu.cpp
+	"menu.h"
+	"windows.h"
+	"element.h"
+	<iostream>
+
+1710759753 e:\cpp\repos\lab2\element.h
+
+1674029754 e:\cpp\repos\lab2\stb-master\stb_image.h
+	"stb_image.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<stdio.h>
+	<assert.h>
+	<stdint.h>
+	<emmintrin.h>
+	<intrin.h>
+	<arm_neon.h>
+
+1710760019 source:e:\cpp\repos\lab2\image.cpp
+	"menu.h"
+	"stb-master/stb_image.h"
+	<GL/gl.h>
+	<iostream>
 
