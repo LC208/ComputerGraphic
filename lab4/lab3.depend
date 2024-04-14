@@ -1,0 +1,797 @@
+# depslib dependency file v1.0
+1584205422 source:e:\cpp\repos\lab2\main.c
+	<windows.h>
+	<gl/gl.h>
+
+1710761296 source:e:\cpp\repos\lab2\main.cpp
+	<windows.h>
+	<gl/gl.h>
+	<iostream>
+	"menu.h"
+	"element.h"
+	<vector>
+	<algorithm>
+
+1710759774 source:e:\cpp\repos\lab2\button.cpp
+	"menu.h"
+	"element.h"
+	<gl/gl.h>
+	<string>
+
+1710654893 e:\cpp\repos\lab2\button.h
+	<string>
+	<windows.h>
+	"menu.h"
+	"text.h"
+
+1709479656 e:\cpp\repos\lab2\button.cpp
+	"button.h"
+	<gl/gl.h>
+
+1710485844 source:d:\lab2\main.cpp
+	<windows.h>
+	<gl/gl.h>
+	<iostream>
+	"button.h"
+	<vector>
+
+1710485924 d:\lab2\button.h
+	<string>
+	<windows.h>
+	"text.h"
+
+1710485902 d:\lab2\text.h
+	<string>
+
+1710484840 source:d:\lab2\button.cpp
+	"button.h"
+	<gl/gl.h>
+	<string>
+	<iostream>
+
+1710485908 source:d:\lab2\text.cpp
+	"text.h"
+	<string>
+	"stb-master/stb_easy_font.h"
+	<GL/gl.h>
+	<iostream>
+
+1710485608 d:\lab2\stb-master\stb_easy_font.h
+	<stdlib.h>
+	<math.h>
+
+1710654892 e:\cpp\repos\lab2\text.h
+	<string>
+	"menu.h"
+
+1710759574 source:e:\cpp\repos\lab2\text.cpp
+	"menu.h"
+	"element.h"
+	<string>
+	"stb-master/stb_easy_font.h"
+	<GL/gl.h>
+
+1674029754 e:\cpp\repos\lab2\stb-master\stb_easy_font.h
+	<stdlib.h>
+	<math.h>
+
+1710760884 e:\cpp\repos\lab2\menu.h
+	<string>
+	<vector>
+	"windef.h"
+	"stb-master/stb_easy_font.h"
+	<algorithm>
+	"element.h"
+
+1710760766 source:e:\cpp\repos\lab2\menu.cpp
+	"menu.h"
+	"windows.h"
+	"element.h"
+	<iostream>
+
+1710759753 e:\cpp\repos\lab2\element.h
+
+1674029754 e:\cpp\repos\lab2\stb-master\stb_image.h
+	"stb_image.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<stdio.h>
+	<assert.h>
+	<stdint.h>
+	<emmintrin.h>
+	<intrin.h>
+	<arm_neon.h>
+
+1710760019 source:e:\cpp\repos\lab2\image.cpp
+	"menu.h"
+	"stb-master/stb_image.h"
+	<GL/gl.h>
+	<iostream>
+
+1711695744 source:c:\users\stud\desktop\computergraphic-main\lab3\button.cpp
+	"menu.h"
+	"element.h"
+	<gl/gl.h>
+	<string>
+
+1711693752 c:\users\stud\desktop\computergraphic-main\lab3\menu.h
+	<string>
+	<vector>
+	"windef.h"
+	"stb-master/stb_easy_font.h"
+	<algorithm>
+	"element.h"
+
+1711691059 c:\users\stud\desktop\computergraphic-main\lab3\stb-master\stb_easy_font.h
+	<stdlib.h>
+	<math.h>
+
+1711693455 c:\users\stud\desktop\computergraphic-main\lab3\element.h
+
+1711695748 source:c:\users\stud\desktop\computergraphic-main\lab3\image.cpp
+	"menu.h"
+	"stb-master/stb_image.h"
+	<GL/gl.h>
+	<iostream>
+
+1711691059 c:\users\stud\desktop\computergraphic-main\lab3\stb-master\stb_image.h
+	"stb_image.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<stdio.h>
+	<assert.h>
+	<stdint.h>
+	<emmintrin.h>
+	<intrin.h>
+	<arm_neon.h>
+
+1711695342 source:c:\users\stud\desktop\computergraphic-main\lab3\menu.cpp
+	"menu.h"
+	"windows.h"
+	"element.h"
+	<iostream>
+
+1711695619 source:c:\users\stud\desktop\computergraphic-main\lab3\text.cpp
+	"menu.h"
+	"element.h"
+	<string>
+	"stb-master/stb_easy_font.h"
+	<GL/gl.h>
+
+1711694658 source:c:\users\stud\desktop\computergraphic-main\lab3\main.cpp
+	<windows.h>
+	<gl/gl.h>
+	<iostream>
+	"menu.h"
+	"element.h"
+	<vector>
+	<algorithm>
+
+1711871321 source:e:\cpp\repos\lab3\button.cpp
+	"menu.h"
+	"element.h"
+	<gl/gl.h>
+	<string>
+
+1711869705 e:\cpp\repos\lab3\menu.h
+	<string>
+	<vector>
+	<windef.h>
+	"stb-master/stb_easy_font.h"
+	<algorithm>
+	"element.h"
+	"renderctl.h"
+	"texture.h"
+
+1711691059 e:\cpp\repos\lab3\stb-master\stb_easy_font.h
+	<stdlib.h>
+	<math.h>
+
+1711856186 e:\cpp\repos\lab3\element.h
+
+1712473244 source:e:\cpp\repos\lab3\image.cpp
+	<GL/gl.h>
+	<iostream>
+	"menu.h"
+
+1711691059 e:\cpp\repos\lab3\stb-master\stb_image.h
+	"stb_image.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<stdio.h>
+	<assert.h>
+	<stdint.h>
+	<emmintrin.h>
+	<intrin.h>
+	<arm_neon.h>
+
+1712847787 source:e:\cpp\repos\lab3\main.cpp
+	<windows.h>
+	<gl/gl.h>
+	<iostream>
+	"menu.h"
+	"element.h"
+	<vector>
+	<algorithm>
+	"renderctl.h"
+	"texture.h"
+	<chrono>
+	<ctime>
+	"level.h"
+	"collisionmanager.h"
+
+1711869318 source:e:\cpp\repos\lab3\menu.cpp
+	"menu.h"
+	"windows.h"
+	"element.h"
+	<iostream>
+	<GL/gl.h>
+
+1711855985 source:e:\cpp\repos\lab3\text.cpp
+	"menu.h"
+	"element.h"
+	<string>
+	"stb-master/stb_easy_font.h"
+	<GL/gl.h>
+
+1711870395 e:\cpp\repos\lab3\renderctl.h
+	<windef.h>
+	<iostream>
+
+1712589061 e:\cpp\repos\lab3\texture.h
+	<string>
+
+1712473877 source:e:\cpp\repos\lab3\texture.cpp
+	"texture.h"
+	"stb-master/stb_image.h"
+	<GL/gl.h>
+
+1712591440 source:e:\cpp\repos\lab3\level.cpp
+	"level.h"
+	"GL/gl.h"
+	<math.h>
+	"collisionmanager.h"
+
+1712589099 e:\cpp\repos\lab3\level.h
+	"renderctl.h"
+	"entity.h"
+	<vector>
+	"collisionmanager.h"
+
+1712591878 e:\cpp\repos\lab3\entity.h
+	"tileset.h"
+	<string>
+	"vec2.h"
+	"const.h"
+	<iostream>
+
+1712853276 source:e:\cpp\repos\lab3\entity.cpp
+	"entity.h"
+	"const.h"
+	<GL/gl.h>
+	<math.h>
+	<iostream>
+	"collisionmanager.h"
+
+1712487428 e:\cpp\repos\lab3\const.h
+
+1712074905 e:\cpp\repos\lab3\vec2.h
+	<cmath>
+
+1712485137 source:e:\cpp\repos\lab3\tileset.cpp
+	"tileset.h"
+	<iostream>
+
+1712484177 e:\cpp\repos\lab3\tileset.h
+	"texture.h"
+	"const.h"
+	<map>
+	"vec2.h"
+
+1712848419 e:\cpp\repos\lab3\collisionmanager.h
+	"vec2.h"
+	<map>
+	"entity.h"
+
+1712857568 source:e:\cpp\repos\lab3\collisionmanager.cpp
+	"collisionmanager.h"
+	<vector>
+	<iostream>
+	<GL/gl.h>
+	<limits>
+
+1711871322 source:d:\lab3\button.cpp
+	"menu.h"
+	"element.h"
+	<gl/gl.h>
+	<string>
+
+1711869706 d:\lab3\menu.h
+	<string>
+	<vector>
+	<windef.h>
+	"stb-master/stb_easy_font.h"
+	<algorithm>
+	"element.h"
+	"renderctl.h"
+	"texture.h"
+
+1711691060 d:\lab3\stb-master\stb_easy_font.h
+	<stdlib.h>
+	<math.h>
+
+1711856188 d:\lab3\element.h
+
+1711870396 d:\lab3\renderctl.h
+	<windef.h>
+	<iostream>
+
+1712589062 d:\lab3\texture.h
+	<string>
+
+1712905082 source:d:\lab3\collisionmanager.cpp
+	"collisionmanager.h"
+	<vector>
+	<iostream>
+	<GL/gl.h>
+	<limits>
+
+1712905290 d:\lab3\collisionmanager.h
+	"vec2.h"
+	<map>
+	"entity.h"
+
+1712074906 d:\lab3\vec2.h
+	<cmath>
+
+1712905298 d:\lab3\entity.h
+	"tileset.h"
+	<string>
+	"vec2.h"
+	"const.h"
+	<iostream>
+
+1712484178 d:\lab3\tileset.h
+	"texture.h"
+	"const.h"
+	<map>
+	"vec2.h"
+
+1712487430 d:\lab3\const.h
+
+1712905484 source:d:\lab3\entity.cpp
+	"entity.h"
+	"const.h"
+	<GL/gl.h>
+	<math.h>
+	<iostream>
+	"collisionmanager.h"
+
+1712473246 source:d:\lab3\image.cpp
+	<GL/gl.h>
+	<iostream>
+	"menu.h"
+
+1712591442 source:d:\lab3\level.cpp
+	"level.h"
+	"GL/gl.h"
+	<math.h>
+	"collisionmanager.h"
+
+1712589100 d:\lab3\level.h
+	"renderctl.h"
+	"entity.h"
+	<vector>
+	"collisionmanager.h"
+
+1712905526 source:d:\lab3\main.cpp
+	<windows.h>
+	<gl/gl.h>
+	<iostream>
+	"menu.h"
+	"element.h"
+	<vector>
+	<algorithm>
+	"renderctl.h"
+	"texture.h"
+	<chrono>
+	<ctime>
+	"level.h"
+	"collisionmanager.h"
+
+1711869320 source:d:\lab3\menu.cpp
+	"menu.h"
+	"windows.h"
+	"element.h"
+	<iostream>
+	<GL/gl.h>
+
+1711855986 source:d:\lab3\text.cpp
+	"menu.h"
+	"element.h"
+	<string>
+	"stb-master/stb_easy_font.h"
+	<GL/gl.h>
+
+1712473878 source:d:\lab3\texture.cpp
+	"texture.h"
+	"stb-master/stb_image.h"
+	<GL/gl.h>
+
+1711691060 d:\lab3\stb-master\stb_image.h
+	"stb_image.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<stdio.h>
+	<assert.h>
+	<stdint.h>
+	<emmintrin.h>
+	<intrin.h>
+	<arm_neon.h>
+
+1712485138 source:d:\lab3\tileset.cpp
+	"tileset.h"
+	<iostream>
+
+1711871322 source:f:\lab3\button.cpp
+	"menu.h"
+	"element.h"
+	<gl/gl.h>
+	<string>
+
+1711869706 f:\lab3\menu.h
+	<string>
+	<vector>
+	<windef.h>
+	"stb-master/stb_easy_font.h"
+	<algorithm>
+	"element.h"
+	"renderctl.h"
+	"texture.h"
+
+1711691060 f:\lab3\stb-master\stb_easy_font.h
+	<stdlib.h>
+	<math.h>
+
+1711856188 f:\lab3\element.h
+
+1711870396 f:\lab3\renderctl.h
+	<windef.h>
+	<iostream>
+
+1712589062 f:\lab3\texture.h
+	<string>
+
+1713081322 source:f:\lab3\collisionmanager.cpp
+	"collisionmanager.h"
+	<vector>
+	<iostream>
+	<GL/gl.h>
+	<limits>
+
+1713078128 f:\lab3\collisionmanager.h
+	"vec2.h"
+	<map>
+	"entity.h"
+
+1712074906 f:\lab3\vec2.h
+	<cmath>
+
+1713084456 f:\lab3\entity.h
+	"tileset.h"
+	<string>
+	"vec2.h"
+	"const.h"
+	<iostream>
+
+1712484178 f:\lab3\tileset.h
+	"texture.h"
+	"const.h"
+	<map>
+	"vec2.h"
+
+1712487430 f:\lab3\const.h
+
+1713084464 source:f:\lab3\entity.cpp
+	"entity.h"
+	"const.h"
+	<GL/gl.h>
+	<math.h>
+	<iostream>
+	"collisionmanager.h"
+
+1712473246 source:f:\lab3\image.cpp
+	<GL/gl.h>
+	<iostream>
+	"menu.h"
+
+1713090804 source:f:\lab3\level.cpp
+	"level.h"
+	"GL/gl.h"
+	<math.h>
+	"collisionmanager.h"
+	<windows.h>
+	<fstream>
+	<iostream>
+	<string>
+	"json.hpp"
+
+1713087796 f:\lab3\level.h
+	"renderctl.h"
+	"entity.h"
+	<vector>
+	"collisionmanager.h"
+
+1713090270 source:f:\lab3\main.cpp
+	<windows.h>
+	<gl/gl.h>
+	<iostream>
+	"menu.h"
+	"element.h"
+	<vector>
+	<algorithm>
+	"renderctl.h"
+	"texture.h"
+	<chrono>
+	<ctime>
+	"level.h"
+	"collisionmanager.h"
+
+1711869320 source:f:\lab3\menu.cpp
+	"menu.h"
+	"windows.h"
+	"element.h"
+	<iostream>
+	<GL/gl.h>
+
+1711855986 source:f:\lab3\text.cpp
+	"menu.h"
+	"element.h"
+	<string>
+	"stb-master/stb_easy_font.h"
+	<GL/gl.h>
+
+1713083866 source:f:\lab3\texture.cpp
+	"texture.h"
+	"stb-master/stb_image.h"
+	<GL/gl.h>
+
+1711691060 f:\lab3\stb-master\stb_image.h
+	"stb_image.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<stdio.h>
+	<assert.h>
+	<stdint.h>
+	<emmintrin.h>
+	<intrin.h>
+	<arm_neon.h>
+
+1712485138 source:f:\lab3\tileset.cpp
+	"tileset.h"
+	<iostream>
+
+1713089252 f:\lab3\json.hpp
+	<algorithm>
+	<cstddef>
+	<functional>
+	<initializer_list>
+	<iosfwd>
+	<iterator>
+	<memory>
+	<string>
+	<utility>
+	<vector>
+	<utility>
+	<algorithm>
+	<array>
+	<forward_list>
+	<iterator>
+	<map>
+	<string>
+	<tuple>
+	<type_traits>
+	<unordered_map>
+	<utility>
+	<valarray>
+	<cstddef>
+	<exception>
+	<numeric>
+	<stdexcept>
+	<string>
+	<vector>
+	<array>
+	<cstddef>
+	<cstdint>
+	<string>
+	<utility>
+	<type_traits>
+	<stdint.h>
+	<stdint.h>
+	<version>
+	<cstdlib>
+	<cassert>
+	<compare>
+	<cstddef>
+	<array>
+	<cstddef>
+	<type_traits>
+	<utility>
+	<limits>
+	<type_traits>
+	<utility>
+	<tuple>
+	<string>
+	<iterator>
+	<cstdint>
+	<map>
+	<memory>
+	<string>
+	<vector>
+	<cstring>
+	<string>
+	<utility>
+	<experimental/filesystem>
+	<filesystem>
+	<algorithm>
+	<iterator>
+	<string>
+	<tuple>
+	<type_traits>
+	<utility>
+	<valarray>
+	<vector>
+	<cstddef>
+	<iterator>
+	<string>
+	<tuple>
+	<utility>
+	<ranges>
+	<cstdint>
+	<tuple>
+	<utility>
+	<cstdint>
+	<cstddef>
+	<functional>
+	<algorithm>
+	<array>
+	<cmath>
+	<cstddef>
+	<cstdint>
+	<cstdio>
+	<cstring>
+	<iterator>
+	<limits>
+	<string>
+	<utility>
+	<vector>
+	<array>
+	<cstddef>
+	<cstring>
+	<iterator>
+	<memory>
+	<numeric>
+	<string>
+	<type_traits>
+	<utility>
+	<cstdio>
+	<istream>
+	<cstddef>
+	<string>
+	<utility>
+	<vector>
+	<array>
+	<clocale>
+	<cstddef>
+	<cstdio>
+	<cstdlib>
+	<initializer_list>
+	<string>
+	<utility>
+	<vector>
+	<cstdint>
+	<utility>
+	<string>
+	<cmath>
+	<cstdint>
+	<functional>
+	<string>
+	<utility>
+	<vector>
+	<cstddef>
+	<limits>
+	<iterator>
+	<type_traits>
+	<cstddef>
+	<iterator>
+	<utility>
+	<type_traits>
+	<algorithm>
+	<cctype>
+	<cerrno>
+	<cstdlib>
+	<iosfwd>
+	<limits>
+	<numeric>
+	<string>
+	<utility>
+	<vector>
+	<initializer_list>
+	<utility>
+	<algorithm>
+	<array>
+	<map>
+	<cmath>
+	<cstdint>
+	<cstring>
+	<limits>
+	<string>
+	<utility>
+	<vector>
+	<algorithm>
+	<cstddef>
+	<iterator>
+	<memory>
+	<string>
+	<vector>
+	<ios>
+	<ostream>
+	<algorithm>
+	<array>
+	<clocale>
+	<cmath>
+	<cstddef>
+	<cstdint>
+	<cstdio>
+	<limits>
+	<string>
+	<iomanip>
+	<type_traits>
+	<utility>
+	<array>
+	<cmath>
+	<cstdint>
+	<cstring>
+	<limits>
+	<type_traits>
+	<functional>
+	<initializer_list>
+	<iterator>
+	<memory>
+	<stdexcept>
+	<type_traits>
+	<utility>
+	<vector>
+	<any>
+	<string_view>
+
