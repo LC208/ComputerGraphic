@@ -23,10 +23,6 @@ void Menu::Image::render()
     glAlphaFunc(GL_GREATER, 0.99);
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-    //cord[1] = cord[3] = 0;
-    //cord[5] = cord[7] = 1;
-    //cord[2] = cord[4] = 1;
-    //cord[0] = cord[6] = 0;
     glVertexPointer(2, GL_FLOAT, 0, vert);
     glTexCoordPointer(2, GL_FLOAT, 0, cord);
     glDrawArrays(GL_TRIANGLE_FAN,0,4);

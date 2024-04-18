@@ -3,6 +3,7 @@
 #include "entity.h"
 #include <vector>
 #include "collisionmanager.h"
+#include <string>
 
 class Level : public RenderCtl
 {
@@ -11,26 +12,13 @@ public:
     void update(float elapsedGameTime) override;
     void reSize(float screenW, float screenH) override;
     void glInit(RECT rct) override;
-    void addEntity(Entity* entity);
+    void addEntity(Entity* entity, bool);
     void loadLevel(const std::string&);
     void exportLevel(const std::string& filename);
     void KeyHandling();
     float gravity = 9.8;
     MoveabelEntity * hero;
-    //Texture levelTexture{std::string("Tiles.png")};
-   /* std::string levelMap[10] =
-    {
-        "BBBBBBBBBB",
-        "BNNNNNNNNB",
-        "BNNNNNNNNB",
-        "BNNNNNNNNB",
-        "BNNNNNNNNB",
-        "BNNNNNNNNB",
-        "BNNNNNNNNB",
-        "BNNNNNNNNB",
-        "BSNNNNNNNB",
-        "BBBBBBBBBB",
-    };*/
+    void renderBackground();
 
 private:
     std::vector<Entity*> entitys;

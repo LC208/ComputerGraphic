@@ -4,6 +4,7 @@
 #include <math.h>
 #include <iostream>
 #include "collisionmanager.h"
+#include <bitset>
 
 vec2f delta{0,0};
 
@@ -68,7 +69,8 @@ void MoveabelEntity::update(float elapsed_seconds)
     if(currentTime > period)
     {
         currentTime -= period;
-        std::array<int,3> lineAndTiles = actionToLineAndTiles[state];
+        std::array<int,3> lineAndTiles;
+        state & EnttityAnimationState::WALKING ? lineAndTiles = actionToLineAndTiles[EnttityAnimationState::WALKING] : state & EnttityAnimationState::JUMPING ? lineAndTiles = actionToLineAndTiles[EnttityAnimationState::JUMPING] : lineAndTiles = actionToLineAndTiles[EnttityAnimationState::STAYING];
         line = lineAndTiles[0];
         tile < lineAndTiles[1] ? tile++ : lineAndTiles[2] ? tile = 0 : 0;
     }

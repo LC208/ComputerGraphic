@@ -38,7 +38,7 @@ public:
     void update(float elapsedGameTime) override;
     void movementUpdate(float elapsedGameTime);
     float a = 1;
-    EnttityAnimationState state = EnttityAnimationState::STAYING;
+    short state = EnttityAnimationState::STAYING;
     bool inAir = false;
     std::map<EnttityAnimationState, std::array<int,3>> actionToLineAndTiles;
     MoveabelEntity(TileSet tileset,float x,float y,float width, float height, float a, std::map<EnttityAnimationState, std::array<int,3>> actionToLineAndTiles) : Entity{tileset,x,y}, a{a},actionToLineAndTiles{actionToLineAndTiles}{};

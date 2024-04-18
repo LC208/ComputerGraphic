@@ -16,8 +16,8 @@ LRESULT CALLBACK WindowProc(HWND, UINT, WPARAM, LPARAM);
 void EnableOpenGL(HWND hwnd, HDC*, HGLRC*);
 void DisableOpenGL(HWND, HDC, HGLRC);
 void ResizeElemenst(UINT newWidth, UINT newHeight);
-const int width = 1000;
-const int height = 1000;
+const int width = 1280;
+const int height = 720;
 Menu mainMenu{width,height};
 Menu extraMenu{width,height};
 RenderCtl* ctl = &mainMenu;
@@ -27,19 +27,6 @@ std::chrono::duration<float> elapsed_seconds;
 Level test{};
 RECT rct;
 int Entity::all_entities;
-std::string levelMap[10] =
-{
-    "BBBBBBBBBB",
-    "BNNNNNNNNB",
-    "BNNNNNNNNB",
-    "BNNNNNNNNB",
-    "BNNNNNNNNB",
-    "BNNNNNNNNB",
-    "BNNNNNNNNB",
-    "BNNNNNNNNB",
-    "BSNNNNNNNB",
-    "FFFFFFFFFF",
-};
 
 int WINAPI WinMain(HINSTANCE hInstance,
                    HINSTANCE hPrevInstance,
@@ -89,20 +76,6 @@ int WINAPI WinMain(HINSTANCE hInstance,
     const float btnWidth = 200;
     const float btnHeight = 100;
 
-   // std::map<EnttityAnimationState, std::array<int,3>> actionToLineAndTiles;
-    //actionToLineAndTiles[EnttityAnimationState::STAYING] = {0, 0, 1};
-   // actionToLineAndTiles[EnttityAnimationState::WALKING] = {0, 8, 1};
-    //actionToLineAndTiles[EnttityAnimationState::JUMPING] = {1, 6, 0};
-    /*Texture charac{std::string("spritelist.png")};
-    MoveabelEntity* hero = new MoveabelEntity(TileSet{charac,80,80,{0,0}},20,100,80,80,1,actionToLineAndTiles);
-    Texture testtex{std::string("jungle_pack_05.png")};
-    Entity* floor = new Entity(TileSet{testtex,64*20,64,{128,128}},0,0);
-    test.addEntity(hero);
-    test.addEntity(floor);
-    test.exportLevel("F:\lab3\level.dat");*/
-    //Entity* floor = new Entity(TileSet{testtex,64*20,64,{128,128}},0,0);
-    //addEntity(hero);
-
     mainMenu.addStartX((width - btnWidth)/2);
     mainMenu.createText("Program",btnWidth,btnHeight,nullptr, ElementType::Nonactive);
     mainMenu.createButton(btnWidth,btnHeight,"Start",[]()
@@ -114,7 +87,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
     mainMenu.createButton(btnWidth,btnHeight,"Test",[](){std::cout<<"test"<<std::endl;});
     mainMenu.createButton(btnWidth,btnHeight,"Exit",[](){PostQuitMessage(0);});
     extraMenu.addStartX((width - btnWidth)/2 - btnWidth);
-    //extraMenu.createImage(Texture{std::string("Tiles.png")},352,384,nullptr,ElementType::Nonactive);
+    //Texture bg{std::string("props1.png")};
+    //mainMenu.createImage(bg,352,384,nullptr,ElementType::Nonactive);
     extraMenu.addStartX(btnWidth);
     extraMenu.createButton(btnWidth,btnHeight,"Back",[](){std::swap(mainMenu,extraMenu);});
     while (!bQuit)
