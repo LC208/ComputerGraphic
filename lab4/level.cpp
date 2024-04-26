@@ -60,7 +60,7 @@ void Level::loadLevel(const std::string& filename)
     Texture testtex{std::string("jungle_pack_05.png")};
     Texture background{std::string("bg_jungle.png")};
     addEntity(new Entity(TileSet{background,1280,720,{1280,720}},0,0), false);
-    hero = new MoveabelEntity(TileSet{charac,80,80,{0,0}},20,100,80,80,10,actionToLineAndTiles);
+    hero = new MoveabelEntity(TileSet{charac,80,80,{0,0}},20,100,80,80,1,actionToLineAndTiles);
     addEntity(hero,true);
 
     json blocks = data["blocks"];

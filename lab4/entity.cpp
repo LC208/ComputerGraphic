@@ -49,6 +49,8 @@ vec2f blockReaction{0,9.8f};
 float period = 0.08;
 float currentTime = 0;
 float restitution = 0.5f;
+float movementTime = 0;
+float movPeriod = 0.01;
 
 void MoveabelEntity::update(float elapsed_seconds)
 {
@@ -62,8 +64,14 @@ void MoveabelEntity::update(float elapsed_seconds)
             velocity+= res.normal * ProjectedVelocity * reaction;
         }
     }
-    movementUpdate(elapsed_seconds);
-    velocity += gravity;
+    movementTime+=elapsed_seconds;
+    if(movementTime > movPeriod)
+    {
+        movementTime-=movPeriod;
+        movementUpdate(elapsed_seconds);
+        velocity += gravity;
+    }
+
     //std::cout << res.nearTime << std::endl;
     currentTime+=elapsed_seconds;
     if(currentTime > period)
@@ -82,25 +90,17 @@ void MoveabelEntity::update(float elapsed_seconds)
     glEnd();
     glPopMatrix();
 }
-float movementTime = 0;
-float movPeriod = 0.01;
+
 
 void MoveabelEntity::movementUpdate(float elapsed_seconds)
 {
-
-    movementTime+=elapsed_seconds;
-    if(movementTime > movPeriod)
+    vec2f prevpos = pos;
+    pos+=velocity*(elapsed_seconds);//pos+=velocity*elapsed_seconds + a*elapsed_seconds*elapsed_seconds*0.5d;
+    if(std::abs(pos.y - prevpos.y) > 1)
     {
-        movementTime-=movPeriod;
-        vec2f prevpos = pos;
-        pos+=velocity*(elapsed_seconds);//pos+=velocity*elapsed_seconds + a*elapsed_seconds*elapsed_seconds*0.5d;
-        if(std::abs(pos.y - prevpos.y) > 1)
-        {
-            inAir = true;
-        }
-        CollisionManager::colTable[this].pos = pos;
-
+        inAir = true;
     }
+    CollisionManager::colTable[this].pos = pos;
 }
 
 void Entity::update(float elapsed_seconds)
