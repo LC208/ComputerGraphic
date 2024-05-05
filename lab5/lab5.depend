@@ -27,3 +27,11 @@
 	<iostream>
 	"libs/camera.h"
 
+1714898313 source:d:\computergraphic\lab5\main.cpp
+	<windows.h>
+	<gl/gl.h>
+	<iostream>
+	"libs/camera.h"
+
+1714898313 d:\computergraphic\lab5\libs\camera.h
+
