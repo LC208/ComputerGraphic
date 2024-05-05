@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1714115820 source:d:\lab5\libs\camera.cpp
+	<windows.h>
+	<gl/gl.h>
+	"camera.h"
+	<math.h>
+
+1674624946 d:\lab5\libs\camera.h
+
+1714115638 source:d:\lab5\main.cpp
+	<windows.h>
+	<gl/gl.h>
+	"libs/camera.h"
+
+1714794096 source:f:\lab5\libs\camera.cpp
+	<windows.h>
+	<gl/gl.h>
+	"camera.h"
+	<math.h>
+	<iostream>
+
+1714793970 f:\lab5\libs\camera.h
+
+1714795174 source:f:\lab5\main.cpp
+	<windows.h>
+	<gl/gl.h>
+	<iostream>
+	"libs/camera.h"
+	<cmath>
+
