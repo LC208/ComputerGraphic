@@ -8,7 +8,6 @@
 struct SCamera camera={0,0,1, 90,0};
 
 
-
 void Camera_Apply()
 {
     glRotatef(-camera.Xrot,1,0,0);

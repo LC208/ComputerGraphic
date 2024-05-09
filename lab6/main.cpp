@@ -10,11 +10,12 @@ void DisableOpenGL(HWND, HDC, HGLRC);
 void Init_Material();
 
 void WndResize(int x, int y){
-    glViewport(0,0,x,y); //перестраивает размеры окна
-    float k=x/(float)y; //соотношение сторон
-    float sz = 0.1; //единица размера
+    glMatrixMode(GL_PROJECTION);
     glLoadIdentity(); //загрузка единичной матрицы
-    glFrustum(-k*sz, k*sz, -sz, sz, sz*2, 100); //установка перспективной проэкции
+    glFrustum(-0.1, 0.1, -0.1, 0.1, 0.2, 200);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    //glFrustum(-k*sz, k*sz, -sz, sz, sz*2, 100); //установка перспективной проэкции
 }
 
 void Draw_Cube(float x,float y,float z,float width,float height,float depth){
@@ -80,22 +81,24 @@ void Draw_Cube(float x,float y,float z,float width,float height,float depth){
     glPopMatrix();
 }
 
-    GLfloat light_position[] = { 10.0f, 10.0f, 5.0f, 1.0f }; //позиция источника
+    GLfloat light_position[] = {10, 10, 5.0f, 1.0f }; //позиция источника
     GLfloat light_spot_direction[] = {0, 0, -1}; // позиция цели
     GLfloat light_ambient[] = { 0.1f, 0.1f, 0.1f, 1.0f }; //параметры
     GLfloat light_diffuse[] = { 1.0f, 1.0f, 1.0f, 1.0f }; //параметры
     GLfloat light_specular[] = { 0.2f, 0.2f, 0.2f, 32.0f }; //параметры
-void Init_Light()
-{
-    glEnable(GL_LIGHTING); //общее освещения для всего пространства
-    glShadeModel(GL_SMOOTH);
-    glLightf(GL_LIGHT1, GL_SPOT_CUTOFF, 60);
-    glLightf(GL_LIGHT1, GL_SPOT_EXPONENT, 2);
-    glLightfv(GL_LIGHT1, GL_AMBIENT, light_ambient);
-    glLightfv(GL_LIGHT1, GL_DIFFUSE, light_diffuse);
-    glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular);
-    glEnable(GL_LIGHT1); // источник света LIGHT0
-}
+//void Init_Light()
+//{
+//    glEnable(GL_LIGHTING); //общее освещения для всего пространства
+//
+//    glLightfv(GL_LIGHT1, GL_POSITION, light_position);
+//    glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, light_spot_direction);
+//    glLightf(GL_LIGHT1, GL_SPOT_CUTOFF, 15);
+//
+//    glLightfv(GL_LIGHT1, GL_AMBIENT, light_ambient);
+//    glLightfv(GL_LIGHT1, GL_DIFFUSE, light_diffuse);
+//    glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular);
+//    glEnable(GL_LIGHT1); // источник света LIGHT0
+//}
 
 
 void Init_Material()
@@ -133,6 +136,8 @@ void Rectangle(float width, float height, float x, float y, float z,float r , fl
         x+width,y+height,z,
         x,y+height,z
     };
+    float normal_vert[]={0,0,1, 0,0,1, 0,0,1, 0,0,1};
+    glNormalPointer(GL_FLOAT,0,&normal_vert);
     glVertexPointer(3, GL_FLOAT, 0, vert);
     glEnableClientState(GL_VERTEX_ARRAY);
     glColor3f(r,g,b);
@@ -146,8 +151,6 @@ void ChessPlate(int n, float startX, float startY, float z)
     int plateW = 3;
     int plateH = 3;
     glEnableClientState(GL_NORMAL_ARRAY);
-    float normal_vert[]={0,0,1, 0,0,1, 0,0,1, 0,0,1};
-    glNormalPointer(GL_FLOAT,0,&normal_vert);
     for (int i = 0; i < n;i++)
     {
         for(int j = 0; j<n;j++)
@@ -220,9 +223,14 @@ int WINAPI WinMain(HINSTANCE hInstance,
     GetClientRect(hwnd,&rct);
     WndResize(rct.right,rct.bottom);
     SetCursorPos(400,400);
+    glEnable(GL_COLOR_MATERIAL);
+    glEnable(GL_LIGHT0);
+    glEnable(GL_LIGHTING);
     glEnable(GL_DEPTH_TEST);
-    bool INITEDLIGHT = false;
-    Init_Light();
+    glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, 45);
+    glLightf(GL_LIGHT1, GL_SPOT_EXPONENT, 2);
+    glShadeModel(GL_SMOOTH);
+    glEnable(GL_NORMALIZE);
     while (!bQuit)
     {
         /* check for messages */
@@ -247,38 +255,37 @@ int WINAPI WinMain(HINSTANCE hInstance,
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
             if (GetForegroundWindow()==hwnd) MoveCamera();
             glPushMatrix();
-            Camera_Apply();
-            glPushMatrix();
-                glRotatef(theta,0,0,1);
-                glLightfv(GL_LIGHT1, GL_POSITION, light_position);
-                glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, light_spot_direction);
-                Draw_Cube(10,10,5,0.1,0.1,0.1);
+                Camera_Apply();
+                glPushMatrix();
+                    glRotatef(theta,0,0,1);
+                    glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+                    glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, light_spot_direction);
+                    Draw_Cube(light_position[0],light_position[1],light_position[2],0.1,0.1,0.1);
+                glPopMatrix();
+                glBegin(GL_LINES);
+                    glColor3f(1.0f, 0.0f, 0.0f);
+                    glVertex3f(0.0f, 0.0f, 0.0f);
+                    glVertex3f(1.0f, 0.0f, 0.0f);
+                    glColor3f(0.0f, 1.0f, 0.0f);
+                    glVertex3f(0.0f, 0.0f, 0.0f);
+                    glVertex3f(0.0f, 0.0f, 1.0f);
+                    glColor3f(0.0f, 0.0f, 1.0f);
+                    glVertex3f(0.0f, 0.0f, 0.0f);
+                    glVertex3f(0.0f, 1.0f, 0.0f);
+                glEnd();
+                ChessPlate(8,2,2,0);
+                Draw_Cube(10, 10 ,0.5 ,0.5,0.5,0.5);
+                Draw_Cube(10, 20 ,0.5 ,0.5,0.5,0.5);
+                Draw_Cube(20, 10 ,0.5 ,0.5,0.5,0.5);
+                Draw_Cube(20,20,0.5,0.5,0.5,0.5);
+                glRotatef(theta, 0.0f, 0.0f, 1.0f);
+                glBegin(GL_TRIANGLES);
+                    glColor3f(1.0f, 0.0f, 0.0f);   glVertex2f(0.0f,   1.0f);
+                    glColor3f(0.0f, 1.0f, 0.0f);   glVertex2f(0.87f,  -0.5f);
+                    glColor3f(0.0f, 0.0f, 1.0f);   glVertex2f(-0.87f, -0.5f);
+                glEnd();
             glPopMatrix();
-            glBegin(GL_LINES);
-                glColor3f(1.0f, 0.0f, 0.0f);
-                glVertex3f(0.0f, 0.0f, 0.0f);
-                glVertex3f(1.0f, 0.0f, 0.0f);
-                glColor3f(0.0f, 1.0f, 0.0f);
-                glVertex3f(0.0f, 0.0f, 0.0f);
-                glVertex3f(0.0f, 0.0f, 1.0f);
-                glColor3f(0.0f, 0.0f, 1.0f);
-                glVertex3f(0.0f, 0.0f, 0.0f);
-                glVertex3f(0.0f, 1.0f, 0.0f);
-            glEnd();
-            ChessPlate(8,2,2,0);
-            Draw_Cube(10, 10 ,0.5 ,0.5,0.5,0.5);
-            Draw_Cube(10, 20 ,0.5 ,0.5,0.5,0.5);
-            Draw_Cube(20, 10 ,0.5 ,0.5,0.5,0.5);
-            Draw_Cube(20,20,0.5,0.5,0.5,0.5);
-            glPushMatrix();
-            glRotatef(theta, 0.0f, 0.0f, 1.0f);
-            glBegin(GL_TRIANGLES);
-                glColor3f(1.0f, 0.0f, 0.0f);   glVertex2f(0.0f,   1.0f);
-                glColor3f(0.0f, 1.0f, 0.0f);   glVertex2f(0.87f,  -0.5f);
-                glColor3f(0.0f, 0.0f, 1.0f);   glVertex2f(-0.87f, -0.5f);
-            glEnd();
-            glPopMatrix();
-            glPopMatrix();
+
             SwapBuffers(hDC);
             theta += 1.0f;
             Sleep (1);

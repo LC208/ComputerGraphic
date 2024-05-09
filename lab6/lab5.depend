@@ -28,3 +28,19 @@
 	"libs/camera.h"
 	<cmath>
 
+1715188378 source:e:\computergraphic\lab6\libs\camera.cpp
+	<windows.h>
+	<gl/gl.h>
+	"camera.h"
+	<math.h>
+	<iostream>
+
+1715184364 e:\computergraphic\lab6\libs\camera.h
+
+1715189055 source:e:\computergraphic\lab6\main.cpp
+	<windows.h>
+	<gl/gl.h>
+	<iostream>
+	"libs/camera.h"
+	<cmath>
+
