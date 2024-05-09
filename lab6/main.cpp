@@ -136,7 +136,7 @@ void Rectangle(float width, float height, float x, float y, float z,float r , fl
         x+width,y+height,z,
         x,y+height,z
     };
-    float normal_vert[]={0,0,1, 0,0,1, 0,0,1, 0,0,1};
+    float normal_vert[]={-1,-1,3, 1,-1,3, 1,1,3, -1,1,3};
     glNormalPointer(GL_FLOAT,0,&normal_vert);
     glVertexPointer(3, GL_FLOAT, 0, vert);
     glEnableClientState(GL_VERTEX_ARRAY);
@@ -257,7 +257,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
             glPushMatrix();
                 Camera_Apply();
                 glPushMatrix();
-                    glRotatef(theta,0,0,1);
+                    glTranslatef(4*sin(theta/100),4*cos(theta/100),0);
                     glLightfv(GL_LIGHT0, GL_POSITION, light_position);
                     glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, light_spot_direction);
                     Draw_Cube(light_position[0],light_position[1],light_position[2],0.1,0.1,0.1);
