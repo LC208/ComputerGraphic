@@ -347,10 +347,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
                     glVertex3f(0.0f, 0.0f, 0.0f);
                     glVertex3f(0.0f, 1.0f, 0.0f);
                 glEnd();
-                glPushMatrix();
-                    glScalef(0.5,0.5, 1);
-                    Draw_Second_Type(2,3,1,13, 10, 10, 0);
-                glPopMatrix();
+
                 ChessPlate(8,2,2,0);
                 float a = 1;
                 glTranslatef(10,10,0);
@@ -358,7 +355,11 @@ int WINAPI WinMain(HINSTANCE hInstance,
                 {
                     glColor4f(0,0,0.5,a);
                     a-=0.2;
-                    Draw_Cube(4*sin(i), 4*cos(i) ,0.51 ,0.5,0.5,0.5);
+                    glPushMatrix();
+                        //glScalef(0.5,0.5, 1);
+                        Draw_Second_Type(0.5,1,1,13, 4*sin(i), 4*cos(i), 0.01);
+                    glPopMatrix();
+                    //Draw_Cube(4*sin(i), 4*cos(i) ,0.51 ,0.5,0.5,0.5);
 
                 }
             glPopMatrix();

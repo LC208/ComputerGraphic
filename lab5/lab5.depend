@@ -35,3 +35,18 @@
 
 1714898313 d:\computergraphic\lab5\libs\camera.h
 
+1714898994 source:e:\computergraphic\lab5\libs\camera.cpp
+	<windows.h>
+	<gl/gl.h>
+	"camera.h"
+	<math.h>
+	<iostream>
+
+1714898994 e:\computergraphic\lab5\libs\camera.h
+
+1714898994 source:e:\computergraphic\lab5\main.cpp
+	<windows.h>
+	<gl/gl.h>
+	<iostream>
+	"libs/camera.h"
+
